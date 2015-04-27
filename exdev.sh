@@ -10,15 +10,21 @@ abc "$@"
 
 
 # :------------------------------------::------------------------------------: #
-#!/bin/sh
+# send multi-args to script
 
 args=("$@")
-
 echo Number of arguments: $#
 echo First argument: ${args[1]}
-$# is the number of arguments received by the script. 
-I find easier to access them using an array: the args=("$@") line puts 
-all the arguments in the args array. To access them use ${args[index]}.
+# $# is the number of arguments received by the script. 
+# I find easier to access them using an array: the args=("$@") line puts 
+# all the arguments in the args array. To access them use ${args[index]}.
+# :------------------------------------::------------------------------------: #
+
+
+# :------------------------------------::------------------------------------: #
+# test for null variable/arg
+# This will return true if a variable is unset or set to the empty string ("").
+if [ -z "$VAR" ];
 # :------------------------------------::------------------------------------: #
 
 
