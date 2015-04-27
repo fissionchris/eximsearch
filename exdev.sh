@@ -20,3 +20,38 @@ $# is the number of arguments received by the script.
 I find easier to access them using an array: the args=("$@") line puts 
 all the arguments in the args array. To access them use ${args[index]}.
 # :------------------------------------::------------------------------------: #
+
+
+# :------------------------------------::------------------------------------: #
+# test file
+# cat file
+foo:&nbsp;bar1
+foo:&nbsp;bar2
+foo:&nbsp;bar3
+foo:&nbsp;bar4
+foo:&nbsp;bar5
+
+# Using awk:
+# awk -F";" '{print $NF}' file
+bar1
+bar2
+bar3
+bar4
+bar5
+
+# Using sed
+# sed 's/.*;//' file
+bar1
+bar2
+bar3
+bar4
+bar5
+
+# Using cut
+# cut -d";" -f2 file
+bar1
+bar2
+bar3
+bar4
+bar5
+# :------------------------------------::------------------------------------: #
